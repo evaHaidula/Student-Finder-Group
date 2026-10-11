@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyMatch - Browse groups</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <a class="brand" href="dashboard.html"><span class="logo"></span> StudyMatch <small>NUST STUDY GROUP FINDER</small></a>
+        <button class="menu-button" id="menuButton">☰</button>
+        <nav id="mainNav">
+            <ul>
+                <li><a href="browse.html" class="active">Browse Groups</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="create-group.html">Create Group</a></li>
+                <li><a href="dashboard.html#messages">Messages</a></li>
+                <li class="user-name"><span class="avatar"></span> T. Shilongo</li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <div class="page-title">
+            <span class="small-label" style="color:#1a5c3a">GROUP FINDER</span>
+            <h1>Browse groups</h1>
+            <p class="muted">Groups that match your programme and availability. Use the filters to narrow them down.</p>
+        </div>
+
+        <div class="browse-layout">
+
+            <!-- Column 1: filters -->
+            <form class="card" id="filterForm">
+                <h2>Search &amp; filters</h2>
+                <div class="field">
+                    <label for="fModule">Module</label>
+                    <input type="text" id="fModule" placeholder="e.g. CPS 212S">
+                </div>
+                <div class="field">
+                    <label for="fProgramme">Programme</label>
+                    <select id="fProgramme">
+                        <option>Computer Science</option>
+                        <option>Information Technology</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="fDay">Day</label>
+                    <select id="fDay">
+                        <option value="">Any day</option>
+                        <option>Tuesday</option>
+                        <option>Wednesday</option>
+                        <option>Thursday</option>
+                        <option>Saturday</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="fFormat">Format</label>
+                    <select id="fFormat">
+                        <option value="">Any format</option>
+                        <option value="In person">In person</option>
+                        <option value="Online">Online</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-green btn-full">Update results</button>
+                <button type="button" class="btn btn-outline btn-full" id="clearFilters" style="margin-top:8px">Clear filters</button>
+            </form>
+
+            <!-- Column 2: list of groups. Each card stores its details in data-... attributes -->
+            <section>
+                <p class="small-label muted" id="resultCount">6 RESULTS · BEST MATCH FIRST</p>
+                <div class="results">
+
+                    <article class="card group-card selected" data-module="CPS 212S Data Structures &amp; Algorithms" data-day="Tuesday" data-format="In person"
+                        data-name="Data Structures &amp; Algorithms" data-match="94" data-desc="Weekly problem-solving group focused on trees, graphs and exam-style algorithm questions."
+                        data-when="Tuesday · 16:00-18:00" data-where="Library, Room 3 · In person" data-members="4 of 6 members · 2 spaces" data-goal="Exam preparation">
+                        <div class="card-top"><span class="small-label">CPS 212S</span><span class="badge badge-amber">2 spots</span></div>
+                        <h3>Data Structures &amp; Algorithms</h3>
+                        <p class="muted">BSc Computer Science · Year 2</p>
+                        <div class="tags"><span class="tag">Tue · 16:00-18:00</span><span class="tag">Library, Room 3</span><span class="tag tag-amber">Exam prep</span></div>
+                        <p class="muted">Strong match: same programme, module and Tuesday availability.</p>
+                    </article>
+
+                    <article class="card group-card" data-module="CPS 212S Algorithms Practice Circle" data-day="Tuesday" data-format="In person"
+                        data-name="Algorithms Practice Circle" data-match="91" data-desc="Short problem sets followed by group discussion of the solutions."
+                        data-when="Tuesday · 16:00-18:00" data-where="Library, Room 3 · In person" data-members="4 of 6 members · 2 spaces" data-goal="Exam preparation">
+                        <div class="card-top"><span class="small-label">CPS 212S</span><span class="badge badge-amber">2 spots</span></div>
+                        <h3>Algorithms Practice Circle</h3>
+                        <p class="muted">BSc Computer Science · Year 2</p>
+                        <div class="tags"><span class="tag">Tue · 16:00-18:00</span><span class="tag">Library, Room 3</span><span class="tag tag-amber">Exam prep</span></div>
+                        <p class="muted">Strong match: same programme, module and Tuesday availability.</p>
+                    </article>
+
+                    <article class="card group-card" data-module="CPS 212S Complexity Study Lab" data-day="Tuesday" data-format="Online"
+                        data-name="Complexity Study Lab" data-match="88" data-desc="Work through Big-O and recurrence relation exercises together on Microsoft Teams."
+                        data-when="Tuesday · 16:00-18:00" data-where="Microsoft Teams · Online" data-members="4 of 6 members · 2 spaces" data-goal="Understand complexity">
+                        <div class="card-top"><span class="small-label">CPS 212S</span><span class="badge badge-amber">2 spots</span></div>
+                        <h3>Complexity Study Lab</h3>
+                        <p class="muted">BSc Computer Science · Year 2</p>
+                        <div class="tags"><span class="tag">Tue · 16:00-18:00</span><span class="tag">Online</span><span class="tag tag-amber">Exam prep</span></div>
+                        <p class="muted">Strong match: same programme, module and Tuesday availability.</p>
+                    </article>
+
+                    <article class="card group-card" data-module="MAT 201S Tuesday Proof Lab" data-day="Thursday" data-format="In person"
+                        data-name="Tuesday Proof Lab" data-match="82" data-desc="Induction, contradiction and counting arguments, one proof at a time."
+                        data-when="Thursday · 17:30-19:30" data-where="Library, Room 3 · In person" data-members="3 of 6 members · 3 spaces" data-goal="Write clear proofs">
+                        <div class="card-top"><span class="small-label">MAT 201S</span><span class="badge badge-amber">3 spots</span></div>
+                        <h3>Tuesday Proof Lab</h3>
+                        <p class="muted">BSc Computer Science · Year 2</p>
+                        <div class="tags"><span class="tag">Thu · 17:30-19:30</span><span class="tag">Library, Room 3</span><span class="tag tag-amber">Practice</span></div>
+                        <p class="muted">Good match: same programme and module, different day.</p>
+                    </article>
+
+                    <article class="card group-card" data-module="NET 311S Packet People" data-day="Saturday" data-format="In person"
+                        data-name="Packet People" data-match="79" data-desc="Subnetting and routing practice for the Computer Networks module."
+                        data-when="Saturday · 10:00-12:00" data-where="Library, Room 3 · In person" data-members="4 of 6 members · 2 spaces" data-goal="Master subnetting">
+                        <div class="card-top"><span class="small-label">NET 311S</span><span class="badge badge-amber">2 spots</span></div>
+                        <h3>Packet People</h3>
+                        <p class="muted">BSc Computer Science · Year 2</p>
+                        <div class="tags"><span class="tag">Sat · 10:00-12:00</span><span class="tag">Library, Room 3</span><span class="tag tag-amber">Practice</span></div>
+                        <p class="muted">Good match: same programme and module, Saturday availability.</p>
+                    </article>
+
+                    <article class="card group-card" data-module="DBS 211S Database Basics" data-day="Wednesday" data-format="Online"
+                        data-name="Database Basics" data-match="65" data-desc="SQL queries and normalisation questions, shared over Microsoft Teams."
+                        data-when="Wednesday · 18:00-20:00" data-where="Microsoft Teams · Online" data-members="2 of 6 members · 4 spaces" data-goal="Learn SQL joins">
+                        <div class="card-top"><span class="small-label">DBS 211S</span><span class="badge badge-amber">4 spots</span></div>
+                        <h3>Database Basics</h3>
+                        <p class="muted">BSc Computer Science · Year 2</p>
+                        <div class="tags"><span class="tag">Wed · 18:00-20:00</span><span class="tag">Online</span><span class="tag tag-amber">Practice</span></div>
+                        <p class="muted">Possible match: same programme, different module.</p>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- Column 3: selected group -->
+            <aside class="card" aria-label="Selected group">
+                <h2>Selected group</h2>
+                <span class="badge badge-amber" id="selMatch">94% MATCH</span>
+                <h2 id="selName" style="font-size:26px;margin-top:10px">Data Structures &amp; Algorithms</h2>
+                <p class="muted" id="selDesc">Weekly problem-solving group focused on trees, graphs and exam-style algorithm questions.</p>
+                <ul class="plain-list">
+                    <li id="selWhen">Tuesday · 16:00-18:00</li>
+                    <li id="selWhere">Library, Room 3 · In person</li>
+                    <li id="selMembers">4 of 6 members · 2 spaces</li>
+                    <li id="selGoal">Goal: Exam preparation</li>
+                </ul>
+                <a href="group.html" class="btn btn-green btn-full" style="margin-top:16px">Review group</a>
+            </aside>
+
+            <!-- Column 4: side cards -->
+            <div class="stack">
+                <section class="card">
+                    <h2>Compatible students</h2>
+                    <div class="person"><span>Julia N. · 91%</span><span class="badge badge-spots">Available</span></div>
+                    <div class="person"><span>Jonas K. · 88%</span><span class="badge badge-spots">Available</span></div>
+                    <div class="person"><span>Paulus H. · 84%</span><span class="badge badge-spots">Available</span></div>
+                </section>
+                <section class="card">
+                    <h2>Recommended groups</h2>
+                    <ul class="plain-list">
+                        <li>MAT 201S · Tuesday Proof Lab</li>
+                        <li>NET 311S · Packet People</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p>StudyMatch · Built for NUST students</p>
+        <p>Safety · Privacy · Support · © 2026</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

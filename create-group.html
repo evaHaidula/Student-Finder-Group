@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyMatch - Create a group</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <a class="brand" href="dashboard.html"><span class="logo"></span> StudyMatch <small>NUST STUDY GROUP FINDER</small></a>
+        <button class="menu-button" id="menuButton">☰</button>
+        <nav id="mainNav">
+            <ul>
+                <li><a href="browse.html">Browse Groups</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="create-group.html" class="active">Create Group</a></li>
+                <li><a href="dashboard.html#messages">Messages</a></li>
+                <li class="user-name"><span class="avatar"></span> T. Shilongo</li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <div class="page-title">
+            <span class="small-label" style="color:#1a5c3a">NEW STUDY GROUP</span>
+            <h1>Create a group</h1>
+            <p class="muted">Set clear expectations. New groups are reviewed before they appear in Browse Groups.</p>
+        </div>
+
+        <!-- After a successful check, script.js opens the dashboard -->
+        <form class="two-column validate" data-next="dashboard.html">
+            <div class="stack">
+
+                <section class="card">
+                    <h2>1 · Academic details</h2>
+                    <div class="field">
+                        <label for="module">Module</label>
+                        <select id="module" required>
+                            <option>CPS 212S - Data Structures &amp; Algorithms</option>
+                            <option>MAT 201S - Discrete Mathematics II</option>
+                            <option>NET 311S - Computer Networks</option>
+                            <option>DBS 211S - Database Systems</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="programme">Programme</label>
+                        <select id="programme">
+                            <option>BSc Computer Science · Year 2</option>
+                            <option>BSc Information Technology · Year 2</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="goal">Topic or study goal</label>
+                        <input type="text" id="goal" placeholder="Exam prep: trees, graphs and complexity" required>
+                    </div>
+                </section>
+
+                <section class="card">
+                    <h2>2 · Schedule and format</h2>
+                    <div class="row-2">
+                        <div class="field">
+                            <label for="day">Day</label>
+                            <select id="day">
+                                <option>Monday</option>
+                                <option selected>Tuesday</option>
+                                <option>Wednesday</option>
+                                <option>Thursday</option>
+                                <option>Friday</option>
+                                <option>Saturday</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="time">Time</label>
+                            <input type="text" id="time" value="16:00-18:00" required>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="format">Format</label>
+                        <select id="format">
+                            <option>In person</option>
+                            <option>Online</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="location">Location</label>
+                        <input type="text" id="location" value="NUST Library · Room 3" required>
+                    </div>
+                </section>
+
+                <section class="card">
+                    <h2>3 · Group settings</h2>
+                    <div class="field">
+                        <label for="max">Maximum members</label>
+                        <select id="max">
+                            <option>4 students</option>
+                            <option>5 students</option>
+                            <option selected>6 students</option>
+                            <option>8 students</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="description">Group description</label>
+                        <textarea id="description" placeholder="Describe the session format and expectations..." data-check="message" required></textarea>
+                    </div>
+                </section>
+            </div>
+
+            <div class="stack">
+                <section class="card">
+                    <h2>Submission status</h2>
+                    <span class="badge badge-spots">DRAFT</span>
+                    <p class="muted" style="margin-top:10px">Submit for approval<br>→ Admin review<br>→ Published to Browse Groups</p>
+                </section>
+                <section class="card">
+                    <h2>Before you submit</h2>
+                    <ul class="plain-list">
+                        <li>☐ Module and programme are correct</li>
+                        <li>☐ Schedule is realistic</li>
+                        <li>☐ Location is available</li>
+                        <li>☐ Goal is specific</li>
+                    </ul>
+                </section>
+                <button type="submit" class="btn btn-amber btn-full">Submit for approval</button>
+                <a href="dashboard.html" class="btn btn-outline btn-full">Save draft</a>
+            </div>
+        </form>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p>StudyMatch · Built for NUST students</p>
+        <p>Safety · Privacy · Support · © 2026</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

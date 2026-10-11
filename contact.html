@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyMatch - Contact</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark">
+
+<header class="site-header">
+    <div class="container header-inner">
+        <a class="brand" href="index.html"><span class="logo"></span> StudyMatch <small>NUST STUDY GROUP FINDER</small></a>
+        <button class="menu-button" id="menuButton">☰</button>
+        <nav id="mainNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="browse.html">Browse Groups</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="login.html"><strong>Log in</strong></a></li>
+                <li><a href="register.html" class="btn btn-amber btn-small">Register</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <div class="page-title">
+            <span class="small-label">HELP AND SUPPORT</span>
+            <h1>How can we help?</h1>
+            <p class="muted">Choose a contact route or send a categorized support request.</p>
+        </div>
+
+        <div class="contact-cards">
+            <article class="card"><h2>General support</h2><p class="muted">support@studymatch.na<br>Replies within 1 business day</p></article>
+            <article class="card"><h2>Safety &amp; reports</h2><p class="muted">safety@studymatch.na<br>Urgent group or member concerns</p></article>
+            <article class="card"><h2>NUST Student Services</h2><p class="muted">Student Support Centre<br>Main Campus · Office hours</p></article>
+        </div>
+
+        <div class="two-column">
+            <!-- Support request form (data entry) -->
+            <form class="card validate" data-success="Thanks! Your request was sent. We will reply by email.">
+                <h2>Send a support request</h2>
+
+                <div class="field">
+                    <label for="category">Category</label>
+                    <select id="category">
+                        <option>Group or join request</option>
+                        <option>Account access</option>
+                        <option>Safety concern</option>
+                        <option>General question</option>
+                    </select>
+                </div>
+                <div class="row-2">
+                    <div class="field">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="Your full name" required>
+                    </div>
+                    <div class="field">
+                        <label for="email">Student email</label>
+                        <input type="email" id="email" placeholder="student@nust.na" data-check="nust-email" required>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" placeholder="Brief summary" required>
+                </div>
+                <div class="field">
+                    <label for="message">Message</label>
+                    <textarea id="message" placeholder="Tell us what happened and what you need..." data-check="message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-amber">Send request</button>
+            </form>
+
+            <div class="stack">
+                <section class="card">
+                    <h2>Before you send</h2>
+                    <p class="muted">For group specific issues, include the module code and group name. Never share your password or private login details.</p>
+                </section>
+                <section class="card">
+                    <h2>Response times</h2>
+                    <ul class="plain-list muted">
+                        <li>Safety reports · Priority</li>
+                        <li>Account access · 1 day</li>
+                        <li>General questions · 2 days</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p>StudyMatch · Built for NUST students</p>
+        <p>Safety · Privacy · Support · © 2026</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

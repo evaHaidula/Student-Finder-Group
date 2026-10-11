@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyMatch - Log in</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <a class="brand" href="index.html"><span class="logo"></span> StudyMatch <small>NUST STUDY GROUP FINDER</small></a>
+        <button class="menu-button" id="menuButton">☰</button>
+        <nav id="mainNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="browse.html">Browse Groups</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html" class="active">Log in</a></li>
+                <li><a href="register.html" class="btn btn-amber btn-small">Register</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="login-page">
+    <section class="login-left">
+        <span class="small-label">WELCOME BACK</span>
+        <h1>Your next study session starts here.</h1>
+        <p>Sign in with your NUST student email to manage your groups and requests.</p>
+    </section>
+
+    <section class="login-right">
+        <!-- After a successful check, script.js opens dashboard.html -->
+        <form class="card login-card validate" data-next="dashboard.html">
+            <h2>Log in to StudyMatch</h2>
+            <div class="field">
+                <label for="email">Student email</label>
+                <input type="email" id="email" placeholder="student@nust.na" data-check="nust-email" required>
+            </div>
+            <div class="field">
+                <label for="password">Password</label>
+                <input type="password" id="password" required>
+            </div>
+            <p><a href="contact.html">Forgot password?</a></p>
+            <button type="submit" class="btn btn-green btn-full">Log in</button>
+            <p class="muted" style="margin-top:14px">New to StudyMatch? <a href="register.html">Register with your student details.</a></p>
+        </form>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p>StudyMatch · Built for NUST students</p>
+        <p>Safety · Privacy · Support · © 2026</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

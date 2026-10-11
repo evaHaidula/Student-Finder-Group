@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyMatch - Group details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark">
+
+<header class="site-header">
+    <div class="container header-inner">
+        <a class="brand" href="dashboard.html"><span class="logo"></span> StudyMatch <small>NUST STUDY GROUP FINDER</small></a>
+        <button class="menu-button" id="menuButton">☰</button>
+        <nav id="mainNav">
+            <ul>
+                <li><a href="browse.html" class="active">Browse Groups</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="create-group.html">Create Group</a></li>
+                <li><a href="dashboard.html#messages">Messages</a></li>
+                <li class="user-name"><span class="avatar"></span> T. Shilongo</li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <p class="breadcrumb"><a href="browse.html">Browse Groups</a> / CPS 212S / Data Structures &amp; Algorithms</p>
+
+        <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px; margin-bottom:20px">
+            <div>
+                <p class="small-label">CPS 212S · 94% MATCH</p>
+                <h1>Data Structures &amp; Algorithms</h1>
+                <p class="muted">BSc Computer Science · Year 2 · Hosted by Julia N.</p>
+            </div>
+            <div class="button-row" style="align-items:flex-start">
+                <button class="btn btn-amber join-button">Request to Join</button>
+                <button class="btn btn-outline" id="reportButton" style="background:none;color:#e8a020 !important;border-color:#e8a020">Report</button>
+            </div>
+        </div>
+
+        <div class="two-column">
+            <div class="stack">
+                <section class="card">
+                    <h2>About this group</h2>
+                    <p>A focused weekly group for students who want to strengthen practical algorithm design. Sessions combine worked examples, peer explanation and timed past-paper questions.</p>
+                </section>
+
+                <section class="card">
+                    <h2>Study goals</h2>
+                    <ul class="goal-list">
+                        <li>✓ Master trees, graphs and sorting</li>
+                        <li>✓ Complete one past paper each week</li>
+                        <li>✓ Prepare for the November assessment</li>
+                    </ul>
+                </section>
+
+                <section class="card">
+                    <h2>Members</h2>
+                    <div class="members">
+                        <div class="member"><span class="badge badge-amber">VERIFIED</span><br><strong>Julia N. · Host</strong><small>Computer Science · Y2</small></div>
+                        <div class="member"><span class="badge badge-amber">VERIFIED</span><br><strong>Jonas K.</strong><small>Computer Science · Y2</small></div>
+                        <div class="member"><span class="badge badge-amber">VERIFIED</span><br><strong>Paulus H.</strong><small>Computer Science · Y2</small></div>
+                        <div class="member"><span class="badge badge-amber">VERIFIED</span><br><strong>Ndeshi M.</strong><small>Computer Science · Y2</small></div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="stack">
+                <section class="card">
+                    <h2>Schedule &amp; location</h2>
+                    <ul class="plain-list">
+                        <li>Every Tuesday</li>
+                        <li>16:00-18:00</li>
+                        <li>NUST Library · Room 3</li>
+                        <li>In person</li>
+                    </ul>
+                </section>
+
+                <section class="card">
+                    <h2>Spaces</h2>
+                    <p class="big-number">2 spaces</p>
+                    <p class="muted">4 of 6 members confirmed</p>
+                </section>
+
+                <section class="card">
+                    <h2>Join request</h2>
+                    <p class="muted" id="joinNote">Tell the host what you want to work on. Requests are usually reviewed within 24 hours.</p>
+                    <button class="btn btn-amber join-button">Request to Join</button>
+                </section>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p>StudyMatch · Built for NUST students</p>
+        <p>Safety · Privacy · Support · © 2026</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

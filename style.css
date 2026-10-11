@@ -1,0 +1,450 @@
+/* =====================================================
+   StudyMatch - one stylesheet for every page
+   Sections: 1 Basics, 2 Header, 3 Buttons, 4 Cards,
+             5 Forms, 6 Page layouts, 7 Footer, 8 Responsive
+   ===================================================== */
+
+/* ---------- 1. BASICS ---------- */
+/* Colours are stored in variables so we can reuse them */
+:root {
+    --dark-green: #0f3d27;
+    --green: #1a5c3a;
+    --light-green: #2d7a52;
+    --pale-green: #d9eadf;
+    --background: #eef3f0;
+    --amber: #e8a020;
+    --white: #ffffff;
+    --red: #c0392b;
+    --border: #c9ddd1;
+}
+
+* {
+    box-sizing: border-box;   /* padding is included in an element's width */
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--dark-green);
+    line-height: 1.5;
+}
+
+h1, h2, h3 { margin: 0 0 10px 0; }
+p { margin: 0 0 12px 0; }
+a { color: inherit; }
+
+/* .container keeps the content centred and not too wide */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.small-label {
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--amber);
+}
+
+.muted { color: #4f7561; }
+
+/* Dark pages (group details, about, contact) */
+body.dark {
+    background: var(--green);
+    color: var(--white);
+}
+body.dark .muted { color: #c3dccb; }
+
+/* ---------- 2. HEADER ---------- */
+.site-header {
+    background: var(--dark-green);
+    color: var(--white);
+}
+
+/* Flexbox puts the logo on the left and the menu on the right */
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.brand small {
+    font-size: 10px;
+    color: #9cc5ac;
+}
+.logo {
+    width: 30px;
+    height: 30px;
+    background: var(--amber);
+    border-radius: 6px;
+}
+
+.site-header ul {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.site-header a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #cfe3d6;
+}
+.site-header a:hover { color: var(--white); }
+.site-header a.active { color: var(--amber); font-weight: bold; }
+
+.user-name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.avatar {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--amber);
+}
+
+/* The menu button is only visible on phones */
+.menu-button {
+    display: none;
+    background: none;
+    border: 1px solid #9cc5ac;
+    color: var(--white);
+    font-size: 20px;
+    padding: 2px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* ---------- 3. BUTTONS ---------- */
+.btn {
+    display: inline-block;
+    padding: 10px 18px;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+}
+.btn-amber  { background: var(--amber); color: var(--dark-green) !important; }
+.btn-green  { background: var(--green); color: var(--white) !important; }
+.btn-outline { background: var(--white); color: var(--green) !important; border-color: var(--green); }
+.btn-red    { background: var(--white); color: var(--red) !important; border-color: var(--red); }
+.btn-small  { padding: 6px 12px; font-size: 13px; }
+.btn-full   { display: block; width: 100%; }
+
+/* ---------- 4. CARDS AND SMALL PIECES ---------- */
+.card {
+    background: var(--white);
+    color: var(--dark-green);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+}
+body.dark .card {
+    background: var(--light-green);
+    color: var(--white);
+    border-color: #4a9470;
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Little rounded labels */
+.badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+.badge-spots   { background: var(--pale-green); color: var(--dark-green); }
+.badge-amber   { background: var(--amber); color: var(--dark-green); }
+.badge-pending { background: #fdf0d8; color: #a86a00; }
+.badge-red     { background: #fbeae8; color: var(--red); }
+
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0; }
+.tag {
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: var(--pale-green);
+}
+.tag-amber { background: #fdf0d8; color: #a86a00; }
+
+.group-card { cursor: pointer; }
+.group-card.selected { border: 2px solid var(--green); }
+
+/* CSS Grid: cards sit in equal columns */
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+
+/* ---------- 5. FORMS ---------- */
+label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    font-family: inherit;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--white);
+    color: var(--dark-green);
+}
+textarea { min-height: 110px; }
+.field { margin-bottom: 14px; }
+
+/* Error text shown by script.js */
+.error { color: var(--red); font-size: 13px; margin-top: 4px; }
+body.dark .error { color: #ffb4a8; }
+input.invalid, select.invalid, textarea.invalid { border-color: var(--red); }
+
+.message-ok {
+    background: #e2f3e8;
+    color: #14532d;
+    border: 1px solid #8fc9a4;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 14px;
+}
+
+.row-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.row-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.button-row { display: flex; gap: 10px; flex-wrap: wrap; }
+
+/* Day checkboxes on the register page sit in a row */
+.availability label { display: inline-block; margin-right: 14px; text-transform: none; font-size: 14px; }
+
+/* Dark pages: dark inputs */
+body.dark input, body.dark select, body.dark textarea {
+    background: var(--green);
+    color: var(--white);
+    border-color: #4a9470;
+}
+body.dark label { color: #c3dccb; }
+
+/* ---------- 6. PAGE LAYOUTS ---------- */
+.page-title { padding: 30px 0 10px 0; }
+.page-title h1 { font-size: 36px; }
+
+/* Home page hero */
+.hero {
+    background: var(--green);
+    color: var(--white);
+    text-align: center;
+    padding: 50px 0;
+}
+.hero h1 { font-size: 46px; }
+.hero .lead { color: #bcd8c7; max-width: 560px; margin: 0 auto 28px auto; }
+.pill {
+    display: inline-block;
+    background: var(--dark-green);
+    color: #9cc5ac;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+}
+.search-box {
+    background: var(--white);
+    color: var(--dark-green);
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 24px;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.section { padding: 40px 0; }
+.section-light { background: #f4f9f6; }
+.section-green { background: var(--green); color: var(--white); }
+.section-deep  { background: var(--dark-green); color: var(--white); }
+
+.step {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 16px;
+}
+.step h3 { color: var(--amber); }
+
+.trust-bar { background: var(--dark-green); padding: 18px 0; }
+.trust-bar ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.trust-bar li {
+    background: var(--green);
+    color: #cfe3d6;
+    font-size: 12px;
+    padding: 5px 12px;
+    border-radius: 20px;
+}
+
+/* Browse page: filters | results | selected group | side cards */
+.browse-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 290px 230px;
+    gap: 16px;
+    align-items: start;
+    padding-bottom: 40px;
+}
+.results { display: grid; gap: 14px; }
+.stack { display: grid; gap: 16px; }
+.person { display: flex; justify-content: space-between; padding: 6px 0; }
+.plain-list { list-style: none; margin: 0; padding: 0; }
+.plain-list li { padding: 3px 0; }
+
+/* Pages with a main column and a side column */
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 310px;
+    gap: 16px;
+    align-items: start;
+    padding-bottom: 40px;
+}
+.two-column .stack { gap: 16px; }
+
+.goal-list { list-style: none; margin: 0; padding: 0; }
+.goal-list li { padding: 4px 0; }
+.members { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.member { background: var(--green); border-radius: 6px; padding: 12px; font-size: 14px; }
+.member small { display: block; color: #c3dccb; }
+.big-number { color: var(--amber); font-size: 32px; font-weight: bold; margin: 4px 0; }
+.breadcrumb { font-size: 13px; color: #9cc5ac; padding: 24px 0 14px 0; }
+
+/* Login page: two halves */
+.login-page { display: grid; grid-template-columns: 1fr 1fr; min-height: 600px; }
+.login-left { background: var(--green); color: var(--white); padding: 80px 50px; }
+.login-right { padding: 80px 50px; display: flex; justify-content: center; align-items: flex-start; }
+.login-card { width: 100%; max-width: 400px; }
+
+/* Dashboard */
+.sessions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.session { background: var(--background); border-radius: 6px; padding: 14px; }
+
+/* Contact page */
+.contact-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 16px; }
+
+.cta-band {
+    background: var(--amber);
+    color: var(--dark-green);
+    border-radius: 8px;
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.cta-band h2 { margin: 0; }
+
+/* Admin page */
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 16px 0; }
+.stat-number { font-size: 34px; font-weight: bold; margin: 0; }
+.tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.tab {
+    padding: 8px 14px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--dark-green);
+}
+.tab.active { background: var(--green); color: var(--white); border-color: var(--green); }
+.tab-panel { display: none; }
+.tab-panel.show { display: block; }
+
+table { width: 100%; border-collapse: collapse; }
+th {
+    text-align: left;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #4f7561;
+    padding: 8px;
+}
+td { padding: 12px 8px; border-top: 1px solid var(--border); }
+td small { display: block; color: #4f7561; }
+
+/* ---------- 7. FOOTER ---------- */
+.site-footer {
+    background: #0c2a1b;
+    color: #b7d3c1;
+    font-size: 13px;
+    padding: 20px 0;
+}
+.footer-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+.footer-inner p { margin: 0; }
+
+/* ---------- 8. RESPONSIVE (tablet and phone) ---------- */
+/* Tablet: screens narrower than 1000px */
+@media (max-width: 1000px) {
+    .browse-layout { grid-template-columns: 1fr 1fr; }
+    .two-column { grid-template-columns: 1fr; }
+    .grid-4, .stats, .row-4 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 { grid-template-columns: repeat(2, 1fr); }
+    .members { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Phone: screens narrower than 700px */
+@media (max-width: 700px) {
+    .menu-button { display: block; }
+    #mainNav {
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 62px;
+        background: var(--dark-green);
+        padding: 16px 5%;
+        z-index: 10;
+    }
+    #mainNav.open { display: block; }
+    .site-header ul { flex-direction: column; align-items: flex-start; gap: 14px; }
+    .brand small { display: none; }
+
+    .browse-layout, .grid-2, .grid-3, .grid-4, .row-2, .row-4,
+    .sessions, .contact-cards, .stats, .members, .login-page {
+        grid-template-columns: 1fr;
+    }
+    .hero h1 { font-size: 32px; }
+    .login-left, .login-right { padding: 40px 5%; }
+    .header-inner { position: relative; }
+}

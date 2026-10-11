@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyMatch - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <a class="brand" href="dashboard.html"><span class="logo"></span> StudyMatch <small>NUST STUDY GROUP FINDER</small></a>
+        <button class="menu-button" id="menuButton">☰</button>
+        <nav id="mainNav">
+            <ul>
+                <li><a href="browse.html">Browse Groups</a></li>
+                <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                <li><a href="create-group.html">Create Group</a></li>
+                <li><a href="#messages">Messages</a></li>
+                <li class="user-name"><span class="avatar"></span> T. Shilongo</li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <div class="page-title">
+            <span class="small-label" style="color:#1a5c3a">STUDENT WORKSPACE</span>
+            <h1>Good afternoon, Tuli</h1>
+            <p class="muted">Your sessions, groups and requests in one place.</p>
+        </div>
+
+        <div class="two-column">
+            <div class="stack">
+
+                <section class="card">
+                    <h2>Upcoming sessions</h2>
+                    <div class="sessions">
+                        <div class="session"><span class="badge badge-pending">UPCOMING</span><h3 style="margin-top:8px">CPS 212S · Tue 16:00</h3><p class="muted">NUST Library · Room 3</p></div>
+                        <div class="session"><span class="badge badge-pending">UPCOMING</span><h3 style="margin-top:8px">MAT 201S · Thu 17:30</h3><p class="muted">NUST Library · Room 3</p></div>
+                        <div class="session"><span class="badge badge-pending">UPCOMING</span><h3 style="margin-top:8px">NET 311S · Sat 10:00</h3><p class="muted">NUST Library · Room 3</p></div>
+                    </div>
+                </section>
+
+                <div class="grid-2">
+                    <section class="card">
+                        <h2>Joined groups</h2>
+                        <article class="card">
+                            <div class="card-top"><span class="small-label">CPS 212S</span><span class="badge badge-spots">2 spots</span></div>
+                            <h3>Data Structures &amp; Algorithms</h3>
+                            <p class="muted">BSc Computer Science · Year 2</p>
+                            <div class="tags"><span class="tag">Tue · 16:00-18:00</span><span class="tag">Library, Room 3</span></div>
+                            <a href="group.html" class="btn btn-outline btn-small">View group</a>
+                        </article>
+                    </section>
+
+                    <section class="card">
+                        <h2>Created groups</h2>
+                        <article class="card">
+                            <div class="card-top"><span class="small-label">NET 311S</span><span class="badge badge-spots">2 spots</span></div>
+                            <h3>Packet People</h3>
+                            <p class="muted">BSc Computer Science · Year 2</p>
+                            <div class="tags"><span class="tag">Sat · 10:00-12:00</span><span class="tag">Library, Room 3</span></div>
+                            <a href="create-group.html" class="btn btn-outline btn-small">Edit group</a>
+                        </article>
+                    </section>
+                </div>
+
+                <div class="grid-2">
+                    <section class="card">
+                        <h2>Pending requests</h2>
+                        <p>MAT 201S · Awaiting host review</p>
+                        <span class="badge badge-pending">PENDING</span>
+                    </section>
+
+                    <section class="card" id="messages">
+                        <h2>Messages</h2>
+                        <p>Julia N.: "Room 3 is confirmed for Tuesday."</p>
+                        <p>Admin: Your NET 311S group was approved.</p>
+                    </section>
+                </div>
+            </div>
+
+            <div class="stack">
+                <section class="card">
+                    <h2>Your profile</h2>
+                    <span class="badge badge-spots">NUST VERIFIED</span>
+                    <h3 style="margin-top:12px; font-size:22px">Tuli Shilongo</h3>
+                    <p class="muted">BSc Computer Science · Year 2<br>4 active modules</p>
+                    <a href="register.html" class="btn btn-outline btn-small">Edit profile</a>
+                </section>
+
+                <section class="card">
+                    <h2>Availability</h2>
+                    <ul class="plain-list">
+                        <li>Tue · 16:00-20:00</li>
+                        <li>Thu · 17:00-20:00</li>
+                        <li>Sat · 09:00-13:00</li>
+                    </ul>
+                    <a href="register.html" class="btn btn-green btn-small" style="margin-top:12px">Update availability</a>
+                </section>
+
+                <a href="admin.html" class="btn btn-outline">Open admin area</a>
+                <a href="index.html" class="btn btn-outline">Log out</a>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p>StudyMatch · Built for NUST students</p>
+        <p>Safety · Privacy · Support · © 2026</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

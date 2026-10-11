@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyMatch - Administration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <a class="brand" href="dashboard.html"><span class="logo"></span> StudyMatch <small>NUST STUDY GROUP FINDER</small></a>
+        <button class="menu-button" id="menuButton">☰</button>
+        <nav id="mainNav">
+            <ul>
+                <li><a href="browse.html">Browse Groups</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="create-group.html">Create Group</a></li>
+                <li><a href="dashboard.html#messages">Messages</a></li>
+                <li class="user-name"><span class="avatar"></span> T. Shilongo</li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <div class="page-title">
+            <span class="small-label">ADMINISTRATION</span>
+            <h1>StudyMatch operations</h1>
+            <p class="muted">Review group quality, respond to reports and maintain the NUST module directory.</p>
+        </div>
+
+        <!-- Numbers at the top (updated by script.js) -->
+        <div class="stats">
+            <div class="card"><h2>All groups</h2><p class="stat-number" id="countGroups">3</p></div>
+            <div class="card"><h2>Pending approvals</h2><p class="stat-number" style="color:#e8a020" id="countPending">3</p></div>
+            <div class="card"><h2>Open reports</h2><p class="stat-number" style="color:#c0392b" id="countReports">2</p></div>
+            <div class="card"><h2>Active modules</h2><p class="stat-number" id="countModules">4</p></div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab" data-panel="panelGroups">All groups</button>
+            <button class="tab active" data-panel="panelPending">Pending approvals</button>
+            <button class="tab" data-panel="panelReports">Reports</button>
+            <button class="tab" data-panel="panelModules">Module management</button>
+        </div>
+
+        <div class="two-column">
+            <div>
+
+                <!-- All groups -->
+                <section class="card tab-panel" id="panelGroups">
+                    <h2>All groups</h2>
+                    <table id="groupsTable">
+                        <thead><tr><th>Group</th><th>Status</th><th>Actions</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>CPS 212S · Data Structures &amp; Algorithms</strong><small>Computer Science · In person · 6 max</small></td><td>Approved</td><td><button class="btn btn-red btn-small" data-action="delete">Delete</button></td></tr>
+                            <tr><td><strong>MAT 201S · Tuesday Proof Lab</strong><small>Computer Science · In person · 6 max</small></td><td>Approved</td><td><button class="btn btn-red btn-small" data-action="delete">Delete</button></td></tr>
+                            <tr><td><strong>NET 311S · Packet People</strong><small>Computer Science · In person · 6 max</small></td><td>Approved</td><td><button class="btn btn-red btn-small" data-action="delete">Delete</button></td></tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- Pending approvals -->
+                <section class="card tab-panel show" id="panelPending">
+                    <h2 id="pendingTitle">Pending approvals · 3</h2>
+                    <table id="pendingTable">
+                        <thead><tr><th>Group</th><th>Submitted</th><th>Actions</th></tr></thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>CPS 212S · Graph Theory Crew</strong><small>Computer Science · In person · 6 max</small></td>
+                                <td>Today · 09:42</td>
+                                <td><button class="btn btn-green btn-small" data-action="approve">Approve</button> <button class="btn btn-red btn-small" data-action="reject">Reject</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>MAT 201S · Proof Practice</strong><small>Computer Science · In person · 6 max</small></td>
+                                <td>Yesterday · 16:18</td>
+                                <td><button class="btn btn-green btn-small" data-action="approve">Approve</button> <button class="btn btn-red btn-small" data-action="reject">Reject</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>NET 311S · Packet People</strong><small>Computer Science · In person · 6 max</small></td>
+                                <td>21 Sep · 11:05</td>
+                                <td><button class="btn btn-green btn-small" data-action="approve">Approve</button> <button class="btn btn-red btn-small" data-action="reject">Reject</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- Reports -->
+                <section class="card tab-panel" id="panelReports">
+                    <h2>Open reports</h2>
+                    <table id="reportsTable">
+                        <thead><tr><th>Group</th><th>Reason</th><th>Actions</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>CPS 212S · Algorithms Practice Circle</strong></td><td>Conduct report</td><td><button class="btn btn-green btn-small" data-action="resolve">Resolve</button></td></tr>
+                            <tr><td><strong>CPS 212S · Data Structures &amp; Algorithms</strong></td><td>Inaccurate group detail</td><td><button class="btn btn-green btn-small" data-action="resolve">Resolve</button></td></tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- Modules: add and delete -->
+                <section class="card tab-panel" id="panelModules">
+                    <h2>Module management</h2>
+                    <table id="modulesTable">
+                        <thead><tr><th>Code</th><th>Name</th><th>Actions</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>CPS 212S</strong></td><td>Data Structures &amp; Algorithms</td><td><button class="btn btn-red btn-small" data-action="delete">Delete</button></td></tr>
+                            <tr><td><strong>MAT 201S</strong></td><td>Discrete Mathematics II</td><td><button class="btn btn-red btn-small" data-action="delete">Delete</button></td></tr>
+                            <tr><td><strong>NET 311S</strong></td><td>Computer Networks</td><td><button class="btn btn-red btn-small" data-action="delete">Delete</button></td></tr>
+                            <tr><td><strong>DBS 211S</strong></td><td>Database Systems</td><td><button class="btn btn-red btn-small" data-action="delete">Delete</button></td></tr>
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+
+            <!-- Side column -->
+            <div class="stack">
+                <section class="card">
+                    <h2>Review checklist</h2>
+                    <ul class="plain-list">
+                        <li>☐ Valid NUST module</li>
+                        <li>☐ Clear study goal</li>
+                        <li>☐ Appropriate schedule</li>
+                        <li>☐ Safe public location</li>
+                        <li>☐ Reasonable capacity</li>
+                    </ul>
+                </section>
+
+                <section class="card">
+                    <h2>Quick module management</h2>
+                    <form id="moduleForm">
+                        <div class="field">
+                            <label for="moduleCode">Module code</label>
+                            <input type="text" id="moduleCode" placeholder="e.g. PRG 202S" required>
+                        </div>
+                        <div class="field">
+                            <label for="moduleName">Module name</label>
+                            <input type="text" id="moduleName" placeholder="Search or add a module" required>
+                        </div>
+                        <button type="submit" class="btn btn-green btn-small">Add module</button>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p>StudyMatch · Built for NUST students</p>
+        <p>Safety · Privacy · Support · © 2026</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
