@@ -16,6 +16,7 @@ Technologies used in this project will be added as development progresses.
 
 * HTML & CSS
 * JavaScript
+* PHP
 * [Add backend/database technologies here]
 
 The project structure may change as new features are implemented.
